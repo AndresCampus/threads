@@ -3,14 +3,16 @@
 //==============================================================================
 #include <stdio.h>
 #include <stdlib.h>
-#define NFORKS 100000
+#include <unistd.h>
+#include <sys/wait.h>
+#define NFORKS 10000
 
 void do_nothing() {
 int i;
 i= 0;
 }
 
-int main(int argc, char *argv[]) {
+int main() {
 int pid, j, status;
 
 for (j=0; j<NFORKS; j++) {
@@ -29,7 +31,7 @@ for (j=0; j<NFORKS; j++) {
 
   /*** this is the parent of the fork ***/
   else {
-    waitpid(pid, status, 0);
+    waitpid(pid, &status, 0);
     }
   }
 }  

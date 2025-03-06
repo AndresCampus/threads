@@ -1,10 +1,8 @@
-#ifdef __APPLE__
- #include <pthread.h>
-#endif
+#include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-#define NTHREADS 100000
+#define NTHREADS 10000
 
 void *do_nothing(void *null) {
 int i;

@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
   gethostname(host,256);  // unistd.h
   printf("Hello world! ejecutando en %s\n", host);
   printf("Número máximo de hilos disponibles: %d\n", omp_get_max_threads());
+  printf("Usando hilos con OpenMP");
 
 
   if (argc != 2) {

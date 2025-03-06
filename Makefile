@@ -1,12 +1,12 @@
 # Compilador y opciones
 CC = gcc
-CFLAGS = -Wall -Wextra 
+CFLAGS = -Wall -Wextra
 OMPFLAGS = -fopenmp
 
 # Archivos fuente y objetos
 SRCS = leer_fasta.c
 OBJS = leer_fasta.o
-TARGETS = cuenta_freq cuenta_freq_omp
+TARGETS = analiza_secuencia analiza_secuencia_omp analiza_secuencia_hilos
 
 # Regla principal
 all: $(TARGETS)
@@ -15,13 +15,22 @@ all: $(TARGETS)
 leer_fasta.o: leer_fasta.c leer_fasta.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-# Compilar cuenta_freq sin OpenMP
-cuenta_freq: cuenta_freq.c $(OBJS)
+# Compilar analiza_secuencia sin OpenMP
+analiza_secuencia: analiza_secuencia.c $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-# Compilar cuenta_freq_omp con OpenMP
-cuenta_freq_omp: cuenta_freq_omp.c $(OBJS)
+# Compilar analiza_secuencia_omp con OpenMP
+analiza_secuencia_omp: analiza_secuencia_omp.c $(OBJS)
 	$(CC) $(CFLAGS) $(OMPFLAGS) -o $@ $^
+
+# Compilar analiza_secuencia_hilos con pthreads
+analiza_secuencia_hilos: analiza_secuencia_hilos.c $(OBJS)
+	$(CC) $(CFLAGS) -pthread -o $@ $^
+
+tests:
+	@echo "time ./analiza_secuencia sequence.fasta"
+	@echo "time ./analiza_secuencia_hilos sequence.fasta"
+	@echo "time ./analiza_secuencia_omp sequence.fasta"
 
 # Limpiar los ejecutables y archivos objeto
 clean:
