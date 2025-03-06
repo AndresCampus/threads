@@ -35,6 +35,8 @@ crear_hilos: crear_hilos.c
 	$(CC) $(CFLAGS) -pthread -o $@ $^
 
 tests:
+	@echo "time ./crear_procesos"
+	@echo "time ./crear_hilos"
 	@echo "time ./analiza_secuencia sequence.fasta"
 	@echo "time ./analiza_secuencia_hilos sequence.fasta"
 	@echo "time ./analiza_secuencia_omp sequence.fasta"
