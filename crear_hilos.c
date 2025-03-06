@@ -10,10 +10,11 @@ i=0;
 pthread_exit(NULL);
 }                      
 
-int main(int argc, char **argv) {
-int rc, i, j, detachstate;
+int main() {
+int rc, j;
 pthread_t tid;
 
+printf("Vamos a crear %d hilos\n",NTHREADS);
 
 for (j=0; j<NTHREADS; j++) {
   rc = pthread_create(&tid, NULL, do_nothing, NULL);

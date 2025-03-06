@@ -1,12 +1,12 @@
 # Compilador y opciones
 CC = gcc
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -Wno-unused-but-set-variable -Wno-unused-parameter
 OMPFLAGS = -fopenmp
 
 # Archivos fuente y objetos
 SRCS = leer_fasta.c
 OBJS = leer_fasta.o
-TARGETS = analiza_secuencia analiza_secuencia_omp analiza_secuencia_hilos
+TARGETS = analiza_secuencia analiza_secuencia_omp analiza_secuencia_hilos crear_procesos crear_hilos
 
 # Regla principal
 all: $(TARGETS)
@@ -25,6 +25,13 @@ analiza_secuencia_omp: analiza_secuencia_omp.c $(OBJS)
 
 # Compilar analiza_secuencia_hilos con pthreads
 analiza_secuencia_hilos: analiza_secuencia_hilos.c $(OBJS)
+	$(CC) $(CFLAGS) -pthread -o $@ $^
+
+# Compilar
+crear_procesos: crear_procesos.c 
+	$(CC) $(CFLAGS) -o $@ $^
+# Compilar
+crear_hilos: crear_hilos.c 
 	$(CC) $(CFLAGS) -pthread -o $@ $^
 
 tests:

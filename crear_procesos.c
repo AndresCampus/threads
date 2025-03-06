@@ -15,6 +15,8 @@ i= 0;
 int main() {
 int pid, j, status;
 
+printf("Vamos a realizar %d fork()\n", NFORKS);
+
 for (j=0; j<NFORKS; j++) {
 
   /*** error handling ***/
