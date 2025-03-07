@@ -1,7 +1,9 @@
 
 # Comparación entre Procesos e Hilos
 
-Este repositorio contiene varios programas en C diseñados para comparar el rendimiento de la creación de procesos mediante `fork()` frente a la creación de hilos (`pthread`). El objetivo es explorar cómo estos mecanismos de concurrencia afectan al rendimiento en aplicaciones de múltiples tareas y cómo la paralelización con hilos y OpenMP puede optimizar el tiempo de ejecución en comparación con la ejecución secuencial.
+Este repositorio contiene varios programas en C diseñados para dos ejercicios:
+- comparar el rendimiento de la creación de procesos mediante `fork()` frente a la creación de hilos (`pthread`). El objetivo es explorar cómo estos mecanismos de creación pueden afectar al rendimiento en aplicaciones multitarea.
+- explorar cómo la paralelización con hilos y OpenMP puede mejorar el tiempo de ejecución en comparación con la ejecución secuencial.
 
 ## Contenido del repositorio
 
