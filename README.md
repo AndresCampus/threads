@@ -20,7 +20,7 @@ Existen tres programas adicionales que ilustran la ejecución en paralelo:
 - **Implementación con OpenMP**: `analiza_secuencia_omp.c`
 - **Implementación secuencial** (para comparación): `analiza_secuencia.c`
 
-Estos programas permiten observar diferencias de rendimiento entre las distintas metodologías de paralelización. La comparación entre `pthread` y `OpenMP` es relevante para comprender cómo estas bibliotecas manejan la ejecución paralela.
+Estos programas permiten observar diferencias de rendimiento entre las distintas metodologías de paralelización. Los ejemplos de programación usando directamente `pthread` y `OpenMP` son relevantes para comprender cómo estas bibliotecas permiten la ejecución paralela con hilos y comparar el grado de dificultad de programación en cada caso.
 
 ## Requisitos
 
