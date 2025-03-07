@@ -55,9 +55,6 @@ make clean
 
 Cuando ejecutes los programas con el comando `time`, se mostrará el tiempo total que tarda cada programa en completarse. Puedes comparar los tiempos de ejecución entre los diferentes métodos (procesos, hilos, y paralelización) para evaluar el rendimiento de cada uno.
 
-## Autores
-
-Desarrollado por [AndresCampus](https://github.com/AndresCampus).
 
 ## Licencia
 
