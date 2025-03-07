@@ -1,5 +1,5 @@
 
-# Comparación entre Procesos y Hilos
+# Comparación entre Procesos e Hilos
 
 Este repositorio contiene varios programas en C diseñados para comparar el rendimiento de la creación de procesos mediante `fork()` frente a la creación de hilos (`pthread`). El objetivo es explorar cómo estos mecanismos de concurrencia afectan al rendimiento en aplicaciones de múltiples tareas y cómo la paralelización con hilos y OpenMP puede optimizar el tiempo de ejecución en comparación con la ejecución secuencial.
 
@@ -38,11 +38,11 @@ make
 Una vez compilados, puedes ejecutar los programas de la siguiente manera, usando `time` para medir el tiempo de ejecución:
 
 ```bash
-time ./crear_procesos      # Ejecuta la prueba con procesos
-time ./crear_hilos         # Ejecuta la prueba con hilos
-time ./analiza_secuencia   # Ejecuta la versión secuencial
-time ./analiza_secuencia_hilos  # Ejecuta la versión con hilos (pthread)
-time ./analiza_secuencia_omp    # Ejecuta la versión con OpenMP
+time ./crear_procesos      # Ejecuta la prueba de creación de procesos
+time ./crear_hilos         # Ejecuta la prueba de creación de hilos
+time ./analiza_secuencia sequence.fasta        # Ejecuta la versión secuencial
+time ./analiza_secuencia_hilos sequence.fasta  # Ejecuta la versión con hilos (pthread)
+time ./analiza_secuencia_omp sequence.fasta    # Ejecuta la versión con OpenMP
 ```
 
 Para limpiar los archivos generados, usa:
